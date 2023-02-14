@@ -7,9 +7,9 @@ $password = $_POST['password'];
 $gender = $_POST['gender'];
 
 if (!empty($name) || !empty($username) || !empty($email) || !empty($phone) || !empty($password) || !empty($gender)) {
-    $host = "sql201.epizy.com";
-    $dbUsername = "epiz_33500965";
-    $dbPassword = "eEEUyD4vlXJZ9d";
+    $host = "localhost";
+    $dbUsername = "root";
+    $dbPassword = "";
     $dbname = "epiz_33500965_ezhomecare";
 
     $conn = new mysqli($host, $dbUsername, $dbPassword, $dbname);
@@ -34,9 +34,9 @@ if (!empty($name) || !empty($username) || !empty($email) || !empty($phone) || !e
             $stmt->bind_param("sssiss", $name, $username, $email, $phone, $password, $gender);
             $stmt->execute();
 
-            header('Location: /index.html');
+            header('Location: index.html');
         } else {
-            header('Location: /index.html');
+            header('Location: index.html');
         }
         $stmt->close();
         $conn->close();

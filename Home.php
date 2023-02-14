@@ -2,7 +2,7 @@
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$con = new mysqli("sql201.epizy.com", "epiz_33500965", "eEEUyD4vlXJZ9d", "epiz_33500965_ezhomecare");
+$con = new mysqli("localhost", "root", "", "epiz_33500965_ezhomecare");
 if ($con->connect_error) {
     die("Failed to connect: " . $con->connect_error);
 } else {
@@ -15,10 +15,10 @@ if ($con->connect_error) {
         if ($data['password'] === $password) {
             header('Location: /Home.html');
         } else {
-            header('Location: /Error.html');
+            header('Location: Error.html');
         }
     } else {
-        header('Location: /Error.html');
+        header('Location: Error.html');
     }
 }
 ?>
